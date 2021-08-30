@@ -120,17 +120,12 @@ public class searchBookTest extends BaseTestClass {
         }
         // Switching to Parent window i.e Main Window.
         driver.switchTo().window(MainWindow);
-
         Thread.sleep(20000);*/
-        WebElement fromCartBtn = driver.findElement(By.xpath("//div[@qa-id='checkcart-confirm-modal-confirm-button']//div[@class='kxa6']"));
+        WebElement fromCartBtn = driver.findElement(By.xpath("//div[@qa-id='checkcart-confirm-modal-confirm-button']" +
+                "//div[@class='kxa6']"));
         fromCartBtn.click();
-        Assert.assertNotNull(driver.findElement(By.xpath("//h1[contains(.,'Корзина пуста')]")), "the book was not added to Cart");
+        Assert.assertNotNull(driver.findElement(By.xpath("//h1[contains(.,'Корзина пуста')]")), "the book " +
+                "was not removed from Cart");
         Thread.sleep(20000);
-
-
-
     }
-
-        //проверить Корзина пуста
-
 }
