@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="First suite" parallel="tests">
+
+    <test name="testScenario">
+        <classes>
+            <class name="tests.searchBookTest"></class>
+        </classes>
+    </test>
+
+</suite>
