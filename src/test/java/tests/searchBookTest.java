@@ -78,7 +78,7 @@ public class searchBookTest extends BaseTestClass {
                 "Data-Driven Testing. Build data-driven test frameworks using Selenium WebDriver, AppiumDriver," +
                 " Java, and TestNG']/../..//span[contains(.,'Удалить')]"));
         removeFromCartBtn.click();
-        Thread.sleep(20000);
+        Thread.sleep(200);
       /* String parentWindowHandler = driver.getWindowHandle();
         String subWindowHandler = null;
         Set<String> handles = driver.getWindowHandles(); // get all window handles
@@ -94,10 +94,10 @@ public class searchBookTest extends BaseTestClass {
         alert.accept();*/
         //driver.switchTo().alert().accept();
 
-        String MainWindow=driver.getWindowHandle();
+        //String MainWindow=driver.getWindowHandle();
 
         // To handle all new opened window.
-        Set<String> s1=driver.getWindowHandles();
+        /*Set<String> s1=driver.getWindowHandles();
         Iterator<String> i1=s1.iterator();
 
         while(i1.hasNext())
@@ -121,7 +121,12 @@ public class searchBookTest extends BaseTestClass {
         // Switching to Parent window i.e Main Window.
         driver.switchTo().window(MainWindow);
 
+        Thread.sleep(20000);*/
+        WebElement fromCartBtn = driver.findElement(By.xpath("//div[@qa-id='checkcart-confirm-modal-confirm-button']//div[@class='kxa6']"));
+        fromCartBtn.click();
+        Assert.assertNotNull(driver.findElement(By.xpath("//h1[contains(.,'Корзина пуста')]")), "the book was not added to Cart");
         Thread.sleep(20000);
+
 
 
     }
