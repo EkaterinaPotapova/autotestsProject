@@ -3,7 +3,7 @@
 
     <test name="testScenario">
         <classes>
-            <class name="tests.searchBookTest"></class>
+            <class name="tests.SearchBookTest"></class>
         </classes>
     </test>
 
