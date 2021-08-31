@@ -14,7 +14,6 @@ public class CustomWaitCondition {
                 // Это значит что страница загружена вместе с дополнительными ресурсами.
                // такой  из лекции : return (Boolean) ((JavascriptExecutor)driver).executeScript("return
                 // (window.jQuery != null) && (jQuery.active === 0);"); не работает
-
             }
         };
     }
