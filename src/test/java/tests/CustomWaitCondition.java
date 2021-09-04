@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 
 public class CustomWaitCondition {
 
-    public static ExpectedCondition<Boolean> jQueryAJAXsCompleted() {
+    public static ExpectedCondition<Boolean> returnDocumentCompleted() {
 
        return new ExpectedCondition<Boolean>(){
             public Boolean apply(WebDriver driver){
