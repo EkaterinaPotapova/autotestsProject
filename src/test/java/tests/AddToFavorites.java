@@ -3,13 +3,13 @@ package tests;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pageObjectModel.MyFavoritesPsge;
+import pageObjectModel.MyFavoritesPage;
 import pageObjectModel.ProductDetailsPage;
 
 public class AddToFavorites extends BaseTestClass{
 
     private ProductDetailsPage productDetailsPage;
-    private MyFavoritesPsge myFavoritesPsge;
+    private MyFavoritesPage myFavoritesPage;
 
     @Test
     public void addToFavoritesScenario()  {
@@ -24,9 +24,9 @@ public class AddToFavorites extends BaseTestClass{
     @Test(dependsOnMethods = {"addToFavoritesScenario"})
     public void chackFavoritesScenario()  {
 
-        myFavoritesPsge=new MyFavoritesPsge(driver)
+        myFavoritesPage =new MyFavoritesPage(driver)
                 .openPage();
-        WebElement bookInFavorites = myFavoritesPsge.numberOfFavorites();
+        WebElement bookInFavorites = myFavoritesPage.numberOfFavorites();
         Assert.assertNotNull(bookInFavorites);
     }
 }

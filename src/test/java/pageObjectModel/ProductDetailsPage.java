@@ -18,9 +18,6 @@ public class ProductDetailsPage extends AbstractPage{
     @FindBy(xpath = "//*[@href='/my/favorites']/*[text() ='1']")
     private WebElement numberOfFavorites;
 
-
-
-
     public ProductDetailsPage(WebDriver driver){//конструктор
         super(driver);
     }
@@ -37,9 +34,7 @@ public class ProductDetailsPage extends AbstractPage{
         return  this;//тут возвращаем страницу деталей продукта (текущее состояние )
     }
 
-    public WebElement numberOfFavorites(){
-        return  numberOfFavorites;
+    public WebElement numberOfFavorites() {
+        return numberOfFavorites;
     }
-
-
 }

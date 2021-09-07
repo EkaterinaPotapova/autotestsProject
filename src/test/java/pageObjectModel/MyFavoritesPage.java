@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import tests.CustomWaitCondition;
 
-public class MyFavoritesPsge extends AbstractPage {
+public class MyFavoritesPage extends AbstractPage {
 
     private static final String MyFavoritesPAGE_URL="https://www.ozon.ru/my/favorites";
 
@@ -15,12 +15,12 @@ public class MyFavoritesPsge extends AbstractPage {
             "TestNG']")
     private WebElement bookInMyFavorites;
 
-    public MyFavoritesPsge(WebDriver driver){//конструктор
+    public MyFavoritesPage(WebDriver driver){//конструктор
         super(driver);
     }
 
     @Override
-    public MyFavoritesPsge openPage(){
+    public MyFavoritesPage openPage(){
         driver.get(MyFavoritesPAGE_URL);
         new WebDriverWait(driver,WAIT_TIME_SEC).until(CustomWaitCondition.returnDocumentCompleted());
         return this;//вернули текущее состояние объекта страницы
