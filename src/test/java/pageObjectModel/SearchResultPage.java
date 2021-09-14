@@ -2,6 +2,7 @@ package pageObjectModel;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class SearchResultPage extends AbstractPage {
@@ -29,7 +30,16 @@ public class SearchResultPage extends AbstractPage {
 
         public SearchResultPage addToCart(){
 
-                addToCartBtn.click();
+                new Actions(driver).moveToElement(addToCartBtn).build().perform();
+                //Двигаем мышку на элемент
+                new Actions(driver).click().build().perform();
+                //Кликаем мышкой в текущей позиции
+
+
+                //new Actions(driver).click(addToCartBtn).build().perform();
+                //кликаем мышкой на элемент addToCartBtn
+
+               // addToCartBtn.click();
                 return this;//возвращает текущий объект страницы
         }
 

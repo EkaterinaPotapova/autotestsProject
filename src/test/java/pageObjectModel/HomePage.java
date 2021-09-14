@@ -1,7 +1,9 @@
 package pageObjectModel;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import tests.CustomWaitCondition;
@@ -29,7 +31,11 @@ public class HomePage extends AbstractPage {
 
     public SearchResultPage seachBook(String term){
         searchField.sendKeys(term);
-        searchBtn.click();
+
+        new Actions(driver).sendKeys(searchBtn, Keys.RETURN).build().perform();
+        //Нажимаем Enter
+
+        //searchBtn.click();
         return  new SearchResultPage(driver, term);//тут возвращаем страницу результатов поиска(текущее состояние )
         // до этого такой страницы не было, вот мы ее создани
     }

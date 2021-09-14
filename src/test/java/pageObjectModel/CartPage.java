@@ -1,5 +1,6 @@
 package pageObjectModel;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -43,13 +44,23 @@ public class CartPage extends AbstractPage{
     }
 
     public CartPage removeFromCart(){
-        removeFromCartBtn.click();
+
+        JavascriptExecutor jsExec = (JavascriptExecutor) driver;
+        jsExec.executeScript("arguments[0].click();", removeFromCartBtn);
+        //нажимаем кнопку используя JavascriptExecutor
+        //removeFromCartBtn.click();
         acceptRemoveFromCartBtn.click();
         return  this;//тут возвращаем страницу результатов поиска(текущее состояние )
         // до этого такой страницы не было, вот мы ее создани
     }
 
     public WebElement cartEmptyItem(){
+        String bg=emptyCardElement.getCssValue("backgroundColor");//Запомнили значение backgroundColor элемента
+        JavascriptExecutor jsHighlighter = (JavascriptExecutor) driver;
+        jsHighlighter.executeScript("arguments[0].style.backgroundColor='"+"yellow"+"'",emptyCardElement); //Подсветили
+        jsHighlighter.executeScript("arguments[0].style.backgroundColor='"+bg+"'",emptyCardElement);//Вернули цвет
+        //Подсветили желтым Надпись "Корзина пуста"
+
         return  emptyCardElement;
     }
 }
