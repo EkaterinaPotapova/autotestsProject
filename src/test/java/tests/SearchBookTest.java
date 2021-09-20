@@ -11,7 +11,6 @@ import org.testng.annotations.Test;
 import pageObjectModel.CartPage;
 import pageObjectModel.HomePage;
 import pageObjectModel.SearchResultPage;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -21,7 +20,7 @@ public class SearchBookTest extends BaseTestClass {
     private SearchResultPage searchResultPageObject;
     private CartPage cartPageOblect;
 
-    @BeforeClass
+ /*   @BeforeClass
     public void driverUp() {
         try {
             nodeUrl = "http://192.168.0.152:24963/wd/hub";
@@ -36,7 +35,7 @@ public class SearchBookTest extends BaseTestClass {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     @Test
     public void testScenario() {

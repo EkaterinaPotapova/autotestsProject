@@ -19,7 +19,7 @@ public class AddToFavorites extends BaseTestClass{
 
     private ProductDetailsPage productDetailsPage;
     private MyFavoritesPage myFavoritesPage;
-
+/*
     @BeforeClass
     public void driverUp() {
         try {
@@ -35,7 +35,7 @@ public class AddToFavorites extends BaseTestClass{
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     @Test
     public void addToFavoritesScenario()  {

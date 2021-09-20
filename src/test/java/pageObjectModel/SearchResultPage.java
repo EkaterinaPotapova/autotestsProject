@@ -36,10 +36,8 @@ public class SearchResultPage extends AbstractPage {
                 //Кликаем мышкой в текущей позиции
 
 
-                //new Actions(driver).click(addToCartBtn).build().perform();
-                //кликаем мышкой на элемент addToCartBtn
 
-               // addToCartBtn.click();
+
                 return this;//возвращает текущий объект страницы
         }
 

@@ -1,5 +1,6 @@
 package tests;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,8 +19,8 @@ class BaseTestClass {
     protected WebDriver driver;
     protected String nodeUrl;
     protected WebDriverWait wait10;
-/*
-    @BeforeClass
+
+  /*  @BeforeClass
     public void driverUp(){
         try {
             nodeUrl="http://192.168.0.152:32288/wd/hub";
@@ -43,6 +44,17 @@ class BaseTestClass {
         //будем использовать wait объеркт класса WebDriverWait
         // для вставки ожиданий по 10 секунд таймаута ожидания выполнения событий
     }*/
+
+    @BeforeClass
+    public void driverUp(){
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //Таймаут на загрузку страниц, выбросит NoSuchElementException если в течение 10 секунд элемент не будет найден
+        wait10 = new WebDriverWait(driver,10);
+        //будем использовать wait объеркт класса WebDriverWait
+        // для вставки ожиданий по 10 секунд таймаута ожидания выполнения событий
+    }
 
     @AfterClass
     public void driverQuit(){
