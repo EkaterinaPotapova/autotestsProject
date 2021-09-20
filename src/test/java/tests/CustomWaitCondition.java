@@ -8,9 +8,9 @@ public class CustomWaitCondition {
 
     public static ExpectedCondition<Boolean> returnDocumentCompleted() {
 
-       return new ExpectedCondition<Boolean>(){
-            public Boolean apply(WebDriver driver){
-                return ((JavascriptExecutor)driver).executeScript("return document.readyState").equals("complete");
+        return new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver driver) {
+                return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
                 //Длем когда свойство Document.readyState станет complete
                 // Это значит что страница загружена вместе с дополнительными ресурсами.
             }
