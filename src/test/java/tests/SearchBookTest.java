@@ -18,7 +18,7 @@ public class SearchBookTest {
 
     @Test
     public void testScenario() {
-        Product product = ProductCreator.WithBothParams(); //Создаем сущность продукта
+        Product product = ProductCreator.withBothParams(); //Создаем сущность продукта
         HomePage homePage = open("http://ozon.ru/", HomePage.class);
         searchResultPageObject = homePage.seachBook(product.getSearchWord(), product.getProductName());
         SelenideElement book = searchResultPageObject.searchResult();

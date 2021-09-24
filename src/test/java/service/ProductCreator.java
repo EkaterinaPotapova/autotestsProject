@@ -9,7 +9,7 @@ public class ProductCreator {
             "Build data-driven test frameworks using Selenium WebDriver, AppiumDriver, Java, and TestNG";
 
     //Здесь создаем объект класса Product с заданными значениями SEARCH_WORD,PRODUCT_NAME
-    public static Product WithBothParams() {
+    public static Product withBothParams() {
         return new Product(SEARCH_WORD, PRODUCT_NAME);
     }
 }
