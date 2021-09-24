@@ -6,17 +6,17 @@
             <class name="tests.SearchBookTest"></class>
         </classes>
     </test>
+    <!--
+      <test name="testScenarioAddToFavorites">
+          <classes>
+              <class name="tests.AddToFavorites"></class>
+          </classes>
+      </test>
+-->
+      <test name="SearchRandomText">
+          <classes>
+              <class name="tests.SearchRandomText"></class>
+          </classes>
+      </test>
 
-    <test name="testScenarioAddToFavorites">
-        <classes>
-            <class name="tests.AddToFavorites"></class>
-        </classes>
-    </test>
-
-    <test name="SearchRandomText">
-        <classes>
-            <class name="tests.SearchRandomText"></class>
-        </classes>
-    </test>
-
-</suite>
+  </suite>

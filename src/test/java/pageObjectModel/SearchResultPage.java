@@ -1,43 +1,25 @@
 package pageObjectModel;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
 import static service.ProductCreator.PRODUCT_NAME;
 
-public class SearchResultPage extends AbstractPage {
+public class SearchResultPage {
 
-    private final String searchTerm;
-    private String searchBook;
+    @FindBy(how = How.XPATH, using = "(//span[text() = '" + PRODUCT_NAME + "'])[2]")
+    private SelenideElement searchResultItem;
 
-    @FindBy(xpath = "(//span[text() = '" + PRODUCT_NAME + "'])[2]")
-    private WebElement searchResultItem;
+    @FindBy(how = How.XPATH, using = "(//span[text() = '" + PRODUCT_NAME + "'])[2]/../../..//div[text() = 'В корзину']")
+    private SelenideElement addToCartBtn;
 
-    @FindBy(xpath = "(//span[text() = '" + PRODUCT_NAME + "'])[2]/../../..//div[text() = 'В корзину']")
-    private WebElement addToCartBtn;
-
-    public SearchResultPage(WebDriver driver, String searchTerm, String searchBook) {//конструктор
-        super(driver);//передаем объект driver в родительский класс
-        this.searchTerm = searchTerm;
-        this.searchBook = searchBook;
-    }
-
-    public WebElement searchResult() {
+    public SelenideElement searchResult() {
         return searchResultItem;
     }
 
     public SearchResultPage addToCart() {
-        new Actions(driver).moveToElement(addToCartBtn).build().perform();
-        //Двигаем мышку на элемент
-        new Actions(driver).click().build().perform();
-        //Кликаем мышкой в текущей позиции
+        addToCartBtn.click();
         return this;//возвращает текущий объект страницы
-    }
-
-    @Override
-    public AbstractPage openPage() {
-        throw new RuntimeException("Ошибка открытия страницы результатов поиска");
     }
 }
