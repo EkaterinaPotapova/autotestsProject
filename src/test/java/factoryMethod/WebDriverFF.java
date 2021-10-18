@@ -5,11 +5,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebDriverFF implements WebDriverCreator {
 
-
-    private WebDriverFF() {
-
+    public WebDriverFF() {
     }
-
 
     @Override
     public WebDriver CreateWEbDriver() {

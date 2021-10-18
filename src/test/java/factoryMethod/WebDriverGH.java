@@ -5,12 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class WebDriverGH implements WebDriverCreator {
 
-
-
     public WebDriverGH() {
-
     }
-
 
     @Override
     public WebDriver CreateWEbDriver() {

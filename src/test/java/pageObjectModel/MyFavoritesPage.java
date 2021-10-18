@@ -30,7 +30,6 @@ public class MyFavoritesPage extends AbstractPage {
         return instance;
     }
 
-
     @Override
     public MyFavoritesPage openPage() {
         driver.get(MyFavoritesPAGE_URL);
@@ -41,5 +40,4 @@ public class MyFavoritesPage extends AbstractPage {
     public WebElement numberOfFavorites() {
         return bookInMyFavorites;
     }
-
 }

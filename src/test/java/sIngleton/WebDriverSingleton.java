@@ -8,7 +8,6 @@ public class WebDriverSingleton {
     public static WebDriver driver;
 
     private WebDriverSingleton() {
-
     }
 
     public static WebDriver getInstance() {
