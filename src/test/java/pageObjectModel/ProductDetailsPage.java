@@ -38,7 +38,7 @@ public class ProductDetailsPage extends AbstractPage {
     @Override
     public ProductDetailsPage openPage() {
         driver.get(PDPPAGE_URL);
-        new WebDriverWait(driver, WAIT_TIME_SEC).until(CustomWaitCondition.returnDocumentCompleted());
+        //new WebDriverWait(driver, WAIT_TIME_SEC).until(CustomWaitCondition.returnDocumentCompleted());
         return this;//вернули текущее состояние объекта страницы
     }
 

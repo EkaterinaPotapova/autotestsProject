@@ -34,7 +34,7 @@ public class MyFavoritesPage extends AbstractPage {
     @Override
     public MyFavoritesPage openPage() {
         driver.get(MyFavoritesPAGE_URL);
-        new WebDriverWait(driver, WAIT_TIME_SEC).until(CustomWaitCondition.returnDocumentCompleted());
+        //new WebDriverWait(driver, WAIT_TIME_SEC).until(CustomWaitCondition.returnDocumentCompleted());
         return this;//вернули текущее состояние объекта страницы
     }
 

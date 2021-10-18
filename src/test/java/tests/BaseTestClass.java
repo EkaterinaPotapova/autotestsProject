@@ -1,6 +1,6 @@
 package tests;
 
-import SIngleton.WebDriverSingleton;
+import decorator.CustomDriverDecorator;
 import factoryMethod.WebDriverCreator;
 import factoryMethod.WebDriverGH;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -21,6 +21,8 @@ class BaseTestClass {
         WebDriverManager.chromedriver().setup();
         WebDriverCreator creator =new WebDriverGH();
         driver = creator.CreateWEbDriver();
+        driver= new CustomDriverDecorator(driver);
+
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         //Таймаут на загрузку страниц, выбросит NoSuchElementException если в течение 10 секунд элемент не будет найден
         wait10 = new WebDriverWait(driver, 10);
