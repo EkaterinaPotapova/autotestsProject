@@ -13,7 +13,9 @@ public class AddToFavorites extends BaseTestClass {
 
     @Test
     public void addToFavoritesScenario() {
-        productDetailsPage = new ProductDetailsPage(driver)
+        //в клиентской части уже без new ProductDetailsPage, просто используем текущий Instance класса ProductDetailsPage.
+        // Если Instance этого класса еще не создавался, то он автоматически будет создан
+        productDetailsPage = ProductDetailsPage.getInstance(driver)
                 .openPage()
                 .addToFavorites();
         WebElement numberOfFavorites = productDetailsPage.numberOfFavorites();
@@ -22,7 +24,7 @@ public class AddToFavorites extends BaseTestClass {
 
     @Test(dependsOnMethods = {"addToFavoritesScenario"})
     public void checkFavoritesScenario() {
-        myFavoritesPage = new MyFavoritesPage(driver)
+        myFavoritesPage = MyFavoritesPage.getInstance(driver)
                 .openPage();
         WebElement bookInFavorites = myFavoritesPage.numberOfFavorites();
         Assert.assertNotNull(bookInFavorites);

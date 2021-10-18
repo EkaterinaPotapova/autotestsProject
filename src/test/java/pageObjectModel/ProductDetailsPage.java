@@ -2,11 +2,14 @@ package pageObjectModel;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import tests.CustomWaitCondition;
 
 public class ProductDetailsPage extends AbstractPage {
+
+    private static ProductDetailsPage instance;
 
     private static final String PDPPAGE_URL = "https://www.ozon.ru/product/selenium-framework-design-in-data-driven" +
             "-testing-157550235/?asb=hSh80VhTZYNWPWQ7v69WFyTSHalpwseOZM5%252FLv3JG%252FQ%253D&asb2=MGfvgKaB-" +
@@ -18,8 +21,18 @@ public class ProductDetailsPage extends AbstractPage {
     @FindBy(xpath = "//*[@href='/my/favorites']/*[text() ='1']")
     private WebElement numberOfFavorites;
 
-    public ProductDetailsPage(WebDriver driver) {//конструктор
+    //конструктор private
+    private ProductDetailsPage(WebDriver driver) {//конструктор
         super(driver);
+    }
+
+    //проверяем был ли instance класса ProductDetailsPage уже создан.
+    // Еслим не был то создаем новый ProductDetailsPage(driver) объект
+    public static ProductDetailsPage getInstance(WebDriver driver) {
+        if (instance == null) {
+            instance = new ProductDetailsPage(driver);
+        }
+        return instance;
     }
 
     @Override
@@ -37,4 +50,5 @@ public class ProductDetailsPage extends AbstractPage {
     public WebElement numberOfFavorites() {
         return numberOfFavorites;
     }
+
 }

@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import tests.CustomWaitCondition;
 
 public class MyFavoritesPage extends AbstractPage {
+    private static MyFavoritesPage instance;
 
     private static final String MyFavoritesPAGE_URL = "https://www.ozon.ru/my/favorites";
 
@@ -15,9 +16,20 @@ public class MyFavoritesPage extends AbstractPage {
             "TestNG']")
     private WebElement bookInMyFavorites;
 
-    public MyFavoritesPage(WebDriver driver) {//конструктор
+    //конструктор private
+    private MyFavoritesPage(WebDriver driver) {//конструктор
         super(driver);
     }
+
+    //проверяем был ли instance класса ProductDetailsPage уже создан.
+    // Еслим не был то создаем новый ProductDetailsPage(driver) объект
+    public static MyFavoritesPage getInstance(WebDriver driver) {
+        if (instance == null) {
+            instance = new MyFavoritesPage(driver);
+        }
+        return instance;
+    }
+
 
     @Override
     public MyFavoritesPage openPage() {
