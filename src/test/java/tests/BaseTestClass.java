@@ -1,6 +1,8 @@
 package tests;
 
 import SIngleton.WebDriverSingleton;
+import factoryMethod.WebDriverCreator;
+import factoryMethod.WebDriverGH;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -17,7 +19,8 @@ class BaseTestClass {
     @BeforeClass
     public void driverUp() {
         WebDriverManager.chromedriver().setup();
-        driver = WebDriverSingleton.getInstance();
+        WebDriverCreator creator =new WebDriverGH();
+        driver = creator.CreateWEbDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         //Таймаут на загрузку страниц, выбросит NoSuchElementException если в течение 10 секунд элемент не будет найден
         wait10 = new WebDriverWait(driver, 10);

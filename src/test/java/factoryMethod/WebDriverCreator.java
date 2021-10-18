@@ -2,6 +2,6 @@ package factoryMethod;
 
 import org.openqa.selenium.WebDriver;
 
-public interface WebDriverFactoryMethod {
+public interface WebDriverCreator {
     WebDriver CreateWEbDriver();
 }
