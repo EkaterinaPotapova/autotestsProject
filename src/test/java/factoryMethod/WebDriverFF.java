@@ -9,7 +9,7 @@ public class WebDriverFF implements WebDriverCreator {
     }
 
     @Override
-    public WebDriver CreateWEbDriver() {
+    public WebDriver createWebDriver() {
         return new FirefoxDriver();
     }
 }

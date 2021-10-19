@@ -1,12 +1,13 @@
 package decorator;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.Set;
 
-public class CustomDriverDecorator implements WebDriver {
+public class CustomDriverDecorator implements WebDriver, JavascriptExecutor {
 
     private WebDriver driver;
 
@@ -68,4 +69,13 @@ public class CustomDriverDecorator implements WebDriver {
         return driver.manage();
     }
 
+    @Override
+    public Object executeScript(String s, Object... objects) {
+        return ((JavascriptExecutor)driver).executeScript(s,objects);
+    }
+
+    @Override
+    public Object executeAsyncScript(String s, Object... objects) {
+        return ((JavascriptExecutor)driver).executeAsyncScript(s,objects);
+    }
 }

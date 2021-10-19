@@ -21,7 +21,7 @@ class BaseTestClass {
     public void driverUp() {
         WebDriverManager.chromedriver().setup();
         WebDriverCreator creator = new WebDriverGH();
-        driver = creator.CreateWEbDriver();
+        driver = creator.createWebDriver();
         driver = new CustomDriverDecorator(driver);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         //Таймаут на загрузку страниц, выбросит NoSuchElementException если в течение 10 секунд элемент не будет найден
