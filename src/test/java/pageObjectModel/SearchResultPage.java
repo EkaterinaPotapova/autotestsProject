@@ -8,10 +8,10 @@ import static service.ProductCreator.PRODUCT_NAME;
 
 public class SearchResultPage {
 
-    @FindBy(how = How.XPATH, using = "(//span[text() = '" + PRODUCT_NAME + "'])[2]")
+    @FindBy(how = How.XPATH, using = "(//span[text() = '" + PRODUCT_NAME + "'])")
     private SelenideElement searchResultItem;
 
-    @FindBy(how = How.XPATH, using = "(//span[text() = '" + PRODUCT_NAME + "'])[2]/../../..//div[text() = 'В корзину']")
+    @FindBy(how = How.XPATH, using = "(//span[text() = '" + PRODUCT_NAME + "'])/../../..//div[text() = 'В корзину']")
     private SelenideElement addToCartBtn;
 
     public SelenideElement searchResult() {

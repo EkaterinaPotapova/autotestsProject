@@ -19,7 +19,7 @@ public class ProductDetailsPage extends AbstractPage {
     private WebElement numberOfFavorites;
 
     //конструктор private
-    private ProductDetailsPage(WebDriver driver) {//конструктор
+    public ProductDetailsPage(WebDriver driver) {//конструктор
         super(driver);
     }
 
