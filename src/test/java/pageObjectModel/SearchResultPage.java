@@ -1,6 +1,7 @@
 package pageObjectModel;
 
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
@@ -22,4 +23,6 @@ public class SearchResultPage {
         addToCartBtn.click();
         return this;//возвращает текущий объект страницы
     }
+
+
 }

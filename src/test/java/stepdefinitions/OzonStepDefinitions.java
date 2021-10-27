@@ -83,9 +83,9 @@ public class OzonStepDefinitions {
     public void iOpenedHomePage(){
         homePage = open("http://ozon.ru/", HomePage.class);
     }
-    @When("I Search book")
-    public void iSearchBook(){
-        searchResultPageObject = homePage.seachBook(product.getSearchWord(), product.getProductName());
+    @When("I Search book with \"([^\"]*)\" and \"([^\"]*)\"$")
+    public void iSearchBook(String searchWord, String searchBook){
+        searchResultPageObject = homePage.seachBook(searchWord, searchBook);
     }
 
     @Then("I see Book Search result page")
@@ -93,6 +93,8 @@ public class OzonStepDefinitions {
         homePage.seachBook(product.getSearchWord(), product.getProductName());
         SelenideElement book = searchResultPageObject.searchResult();
         Assert.assertNotNull(book);
+
+
     }
 
     @After

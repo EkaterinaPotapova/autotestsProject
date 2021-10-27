@@ -11,7 +11,7 @@ Feature: Add To Favorites on Ozon.ru
 
   Scenario: Search book
     Given I opened Home Page
-    When I Search book
+    When I Search book with "selenium java" and "Selenium Framework Design in Data-Driven Testing. Build data-driven test frameworks using Selenium WebDriver, AppiumDriver, Java, and TestNG"
     Then I see Book Search result page
 
 
