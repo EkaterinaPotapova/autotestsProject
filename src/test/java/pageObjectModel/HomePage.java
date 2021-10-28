@@ -6,7 +6,7 @@ import org.openqa.selenium.support.How;
 
 import static com.codeborne.selenide.Selenide.page;
 
-public class HomePage {
+public class HomePage  {
 
     @FindBy(how = How.XPATH, using = "//input[@placeholder[contains(.,'Искать')]]")
     private SelenideElement searchField;
