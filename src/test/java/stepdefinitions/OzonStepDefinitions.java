@@ -41,6 +41,7 @@ public class OzonStepDefinitions {
     public void iOpenMyFavoritesPage() {
         MyFavoritesPage.getInstance(WebDriverSingleton.getInstance())
                 .openPage();
+        System.out.println("****---I opened My Favorites Page");
     }
 
     @Then("I see Book In Favorites")
@@ -48,6 +49,7 @@ public class OzonStepDefinitions {
         WebElement bookInFavorites = MyFavoritesPage.getInstance(WebDriverSingleton.getInstance()).numberOfFavorites();
         //тут очень удобно синглтон getInstance(driver)
         Assert.assertNotNull(bookInFavorites);
+        System.out.println("****---I see Book In Favorites");
     }
 
     @Given("I opened Home Page")
