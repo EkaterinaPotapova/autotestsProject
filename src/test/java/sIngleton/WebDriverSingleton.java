@@ -16,7 +16,6 @@ public class WebDriverSingleton {
         if (driver == null) {
             WebDriverManager driverManager = WebDriverManager.getInstance();
             driver = driverManager.capabilities(new ChromeOptions()).create();
-
         }
         return driver;
     }
@@ -25,7 +24,4 @@ public class WebDriverSingleton {
         WebDriverSingleton.getInstance().quit();
         driver=null;
     }
-
-
-
 }
