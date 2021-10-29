@@ -7,6 +7,7 @@ import factoryMethod.WebDriverGH;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import sIngleton.WebDriverSingleton;
 
 public class ScenarioHooks {
@@ -18,9 +19,10 @@ public class ScenarioHooks {
         WebDriverSingleton.getInstance();
     }
 
-    @AfterSuite
+    @After
     public void driverQuit() {
         System.out.println("****---After");
-        WebDriverSingleton.getInstance().quit();
+
+        WebDriverSingleton.driverQuit();
     }
 }
