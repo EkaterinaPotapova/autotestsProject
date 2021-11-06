@@ -6,7 +6,7 @@ Feature: Search book on Ozon.ru
     Then I see Book Search result page
     Examples:
       | value1 | value2 |
-      | "selenium java"|"Selenium Framework Design in Data-Driven Testing. Build data-driven test frameworks using Selenium WebDriver, AppiumDriver, Java, and TestNG"|
+      | "Selenium Framework"|"Selenium Framework Design in Data-Driven Testing. Build data-driven test frameworks using Selenium WebDriver, AppiumDriver, Java, and TestNG"|
       | "in Data-Driven Testing"|"Selenium Framework Design in Data-Driven Testing. Build data-driven test frameworks using Selenium WebDriver, AppiumDriver, Java, and TestNG"|
       | "Selenium WebDriver"|"Selenium Framework Design in Data-Driven Testing. Build data-driven test frameworks using Selenium WebDriver, AppiumDriver, Java, and TestNG"|
 

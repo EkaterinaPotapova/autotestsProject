@@ -69,7 +69,8 @@ public class OzonStepDefinitions {
     @Then("I see Book Search result page")
     public void iSeeBookSearchResultPage() {
         SelenideElement book = searchResultPageObject.searchResult();
-        Assert.assertNotNull(book);
+        //Assert.assertNotNull(book);
+        Assert.assertNull(book);
         if (book != null) {
             MyLogger.info("Element book is present");
         }
