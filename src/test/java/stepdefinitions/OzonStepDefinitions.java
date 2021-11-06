@@ -4,6 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import myReporting.MyLogger;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import pageObjectModel.HomePage;
@@ -29,6 +30,7 @@ public class OzonStepDefinitions {
     @When("I click Add To Favorites Button")
     public void iClickAddToFavoritesButton() {
         ProductDetailsPage.getInstance(WebDriverSingleton.getInstance()).addToFavorites();
+
     }
 
     @Then("I see Number Of Favorites")
@@ -52,11 +54,14 @@ public class OzonStepDefinitions {
 
     @Given("I opened Home Page")
     public void iOpenedHomePage() {
+
         homePage = open("http://ozon.ru/", HomePage.class);
+        MyLogger.info("Open homePage on URL http://ozon.ru/ ");
     }
 
     @When("I Search book with \"([^\"]*)\" and \"([^\"]*)\"$")
     public void iSearchBook(String searchWord, String searchBook) {
+
         searchResultPageObject = homePage.seachBook(searchWord, searchBook);
         //здесь нет синглтона, приходится носить searchResultPageObject
     }
@@ -65,6 +70,12 @@ public class OzonStepDefinitions {
     public void iSeeBookSearchResultPage() {
         SelenideElement book = searchResultPageObject.searchResult();
         Assert.assertNotNull(book);
+        if (book != null) {
+            MyLogger.info("Element book is present");
+        }
+        else{
+            MyLogger.error("Element book is NOT present");
+        }
         WebDriverSingleton.getInstance().navigate().refresh();//Чтобы поле поиска обновилось перед следующим параметром
     }
 }

@@ -1,11 +1,13 @@
 package pageObjectModel;
 
+import myReporting.MyLogger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import sIngleton.WebDriverSingleton;
 import tests.CustomWaitCondition;
+import utils.MyUtil;
 
 public class MyFavoritesPage extends AbstractPage {
     private static MyFavoritesPage instance;
@@ -27,6 +29,7 @@ public class MyFavoritesPage extends AbstractPage {
     public static MyFavoritesPage getInstance(WebDriver driver) {
         if (instance == null) {
             instance = new MyFavoritesPage(driver);
+            MyLogger.info("instance of MyFavoritesPage created");
         }
         return instance;
     }
@@ -35,10 +38,13 @@ public class MyFavoritesPage extends AbstractPage {
     public MyFavoritesPage openPage() {
         WebDriverSingleton.getInstance().get(MyFavoritesPAGE_URL);
         new WebDriverWait(WebDriverSingleton.getInstance(), WAIT_TIME_SEC).until(CustomWaitCondition.returnDocumentCompleted());
+        MyLogger.info("Open MyFavoritesPage on URL "+MyFavoritesPAGE_URL);
         return this;//вернули текущее состояние объекта страницы
     }
 
     public WebElement numberOfFavorites() {
+        MyUtil.HighlightElement(WebDriverSingleton.getInstance(),bookInMyFavorites);
+        MyLogger.info("Element bookInMyFavorites found with xpath = //span[text() = 'Selenium Framework Design in Data-Driven...");
         return bookInMyFavorites;
     }
 }

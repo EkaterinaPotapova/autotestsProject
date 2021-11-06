@@ -1,7 +1,9 @@
 package sIngleton;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class WebDriverSingleton {
@@ -20,8 +22,10 @@ public class WebDriverSingleton {
         return driver;
     }
 
-    public static void driverQuit() {
+    public static void webDriverQuit() {
         WebDriverSingleton.getInstance().quit();
         driver=null;
     }
+
+
 }
