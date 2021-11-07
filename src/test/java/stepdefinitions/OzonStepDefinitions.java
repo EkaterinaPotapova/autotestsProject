@@ -71,6 +71,7 @@ public class OzonStepDefinitions {
         SelenideElement book = searchResultPageObject.searchResult();
         //Assert.assertNotNull(book);
         Assert.assertNull(book);
+        //Чтобы тест падал и логировалось  MyLogger.error("Element book is NOT present");
         if (book != null) {
             MyLogger.info("Element book is present");
         }

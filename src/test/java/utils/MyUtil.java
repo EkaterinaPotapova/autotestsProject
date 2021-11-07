@@ -37,21 +37,10 @@ public class MyUtil {
             String scrPath = screenshotName+".jpg";
             File copy=new File(scrPath);
             FileUtils.copyFile(screenshot,copy );
-        //    captureScreenshot(this.drive)
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
-   /* @Attachment
-    private static byte[] captureScreenshot(WebDriver driver){
-        byte[] screenshot = null;
-        screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-        return screenshot;
-    }
-
-    */
-
 
 
 }

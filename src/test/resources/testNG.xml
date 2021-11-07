@@ -1,23 +1,23 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="First suite">
+    <!--
+              <test name="testScenario">
+                  <classes>
+                      <class name="tests.SearchBookTest"></class>
+                  </classes>
+              </test>
 
-            <test name="testScenario">
+                    <test name="testScenarioAddToFavorites">
+                        <classes>
+                            <class name="tests.AddToFavorites"></class>
+                        </classes>
+                    </test>
+
+
+            <test name="SearchRandomText">
                 <classes>
-                    <class name="tests.SearchBookTest"></class>
+                    <class name="tests.SearchRandomText"></class>
                 </classes>
             </test>
-
-                  <test name="testScenarioAddToFavorites">
-                      <classes>
-                          <class name="tests.AddToFavorites"></class>
-                      </classes>
-                  </test>
-
-        <!--
-          <test name="SearchRandomText">
-              <classes>
-                  <class name="tests.SearchRandomText"></class>
-              </classes>
-          </test>
-        -->
+          -->
   </suite>

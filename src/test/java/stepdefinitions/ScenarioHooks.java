@@ -11,7 +11,6 @@ import utils.MyUtil;
 
 public class ScenarioHooks {
 
-
     @Before
     public void driverUp() {
       WebDriverSingleton.getInstance();
@@ -30,6 +29,7 @@ public class ScenarioHooks {
     @After
     public void tearDown(Scenario scenario) {
         if (scenario.isFailed()) {
+            MyLogger.error("This Scenario ended with status "+scenario.getStatus());
             MyUtil.takeScreenshots(WebDriverSingleton.getInstance());
         }
     }

@@ -3,8 +3,6 @@ Feature: Add To Favorites on Ozon.ru
   Background:
     Given I opened My Favorites Page
 
-
-
   Scenario: Add To Favorites on Ozon.ru
     And I opened Product Details Page
     When I click Add To Favorites Button
