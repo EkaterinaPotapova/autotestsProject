@@ -1,9 +1,9 @@
 package stepdefinitions;
 
 import com.codeborne.selenide.SelenideElement;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import myReporting.MyLogger;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;

@@ -1,21 +1,20 @@
 package runner;
 
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
-import org.junit.runner.RunWith;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+import org.testng.annotations.Test;
 
-@RunWith(Cucumber.class)
+@Test
 @CucumberOptions(
-        dryRun = false,
         strict = true,
         monochrome = true,
-        features="src/test/resources/features",
-plugin = {
-        "pretty",
-        "io.qameta.allure.cucumber2jvm.AllureCucumber2Jvm"
-})
-
-
-public class RunnerTest {
+        features = "src/test/resources/features",
+        glue = "stepdefinitions",
+        plugin = {
+                "pretty",
+                "io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm"
+        }
+)
+public class RunnerTest extends AbstractTestNGCucumberTests {
 }
