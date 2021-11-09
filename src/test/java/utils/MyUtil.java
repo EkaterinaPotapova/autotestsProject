@@ -1,6 +1,6 @@
 package utils;
 
-import io.qameta.allure.Allure;
+import io.qameta.allure.Attachment;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
@@ -40,11 +40,16 @@ public class MyUtil {
             String scrPath = "screenshots/scr" + System.nanoTime() + ".png";
             File copy = new File(scrPath);
             FileUtils.copyFile(screenshot, copy);
-            Allure.addAttachment("ScreenshotFileUtils", FileUtils.openInputStream(screenshot));
+            captureScreenshot(driver);
         } catch (IOException e) {
             logger.error("takeScreenshots method fail with massege ", e);
         }
     }
-
+    @Attachment(value = "Screenshot", type = "image/png")
+    private static byte[] captureScreenshot(WebDriver driver) {
+        byte[] screenshot = null;
+        screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+        return screenshot;
+    }
 
 }
