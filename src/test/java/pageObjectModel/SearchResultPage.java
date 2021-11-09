@@ -22,7 +22,7 @@ public class SearchResultPage {
     }
 
     public SearchResultPage addToCart() {
-        MyUtil.HighlightElement(WebDriverSingleton.getInstance(),addToCartBtn);
+        MyUtil.highlightElement(WebDriverSingleton.getInstance(), addToCartBtn);
         addToCartBtn.click();
         MyLogger.info("Click addToCartBtn on SearchResultPage");
         return this;//возвращает текущий объект страницы

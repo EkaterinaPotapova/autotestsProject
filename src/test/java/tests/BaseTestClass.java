@@ -1,15 +1,7 @@
 package tests;
 
-import decorator.CustomDriverDecorator;
-import factoryMethod.WebDriverCreator;
-import factoryMethod.WebDriverGH;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-
-import java.util.concurrent.TimeUnit;
 
 class BaseTestClass {
 

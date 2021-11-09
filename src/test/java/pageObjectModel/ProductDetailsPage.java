@@ -40,19 +40,19 @@ public class ProductDetailsPage extends AbstractPage {
     public ProductDetailsPage openPage() {
         driver.get(PDPPAGE_URL);
         //new WebDriverWait(driver, WAIT_TIME_SEC).until(CustomWaitCondition.returnDocumentCompleted());
-        MyLogger.info("Open ProductDetailsPage on URL "+PDPPAGE_URL);
+        MyLogger.info("Open ProductDetailsPage on URL " + PDPPAGE_URL);
         return this;//вернули текущее состояние объекта страницы
     }
 
     public ProductDetailsPage addToFavorites() {
-        MyUtil.HighlightElement(WebDriverSingleton.getInstance(),addToFavoritesBtn);
+        MyUtil.highlightElement(WebDriverSingleton.getInstance(), addToFavoritesBtn);
         addToFavoritesBtn.click();
         MyLogger.info("Click AddToFavorites Btn");
         return this;//тут возвращаем страницу деталей продукта (текущее состояние )
     }
 
     public WebElement numberOfFavorites() {
-        MyUtil.HighlightElement(WebDriverSingleton.getInstance(),numberOfFavorites);
+        MyUtil.highlightElement(WebDriverSingleton.getInstance(), numberOfFavorites);
         MyLogger.info("Element numberOfFavorites found with xpath = //*[@href='/my/favorites']/*[text() ='1']");
         return numberOfFavorites;
 

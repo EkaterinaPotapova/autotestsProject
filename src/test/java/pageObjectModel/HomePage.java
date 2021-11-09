@@ -9,18 +9,18 @@ import utils.MyUtil;
 
 import static com.codeborne.selenide.Selenide.page;
 
-public class HomePage  {
+public class HomePage {
 
     @FindBy(how = How.XPATH, using = "//input[@placeholder[contains(.,'Искать')]]")
     private SelenideElement searchField;
 
     public SearchResultPage seachBook(String term, String book) {
-        MyUtil.HighlightElement(WebDriverSingleton.getInstance(),searchField);
-       searchField
+        MyUtil.highlightElement(WebDriverSingleton.getInstance(), searchField);
+        searchField
                 .setValue(term)
                 .pressEnter();
 
-        MyLogger.debug("Press Enter with value "+term);
+        MyLogger.debug("Press Enter with value " + term);
         return page(SearchResultPage.class);//тут возвращаем страницу результатов поиска(текущее состояние )
         // до этого такой страницы не было, вот мы ее создани
     }

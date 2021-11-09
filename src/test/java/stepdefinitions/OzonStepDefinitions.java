@@ -12,7 +12,7 @@ import pageObjectModel.MyFavoritesPage;
 import pageObjectModel.ProductDetailsPage;
 import pageObjectModel.SearchResultPage;
 import sIngleton.WebDriverSingleton;
-
+import utils.MyUtil;
 
 import static com.codeborne.selenide.Selenide.open;
 
@@ -25,11 +25,13 @@ public class OzonStepDefinitions {
     public void iOpenedProductDetailsPage() {
         ProductDetailsPage.getInstance(WebDriverSingleton.getInstance())
                 .openPage();
+        MyUtil.takeScreenshots(WebDriverSingleton.getInstance());
     }
 
     @When("I click Add To Favorites Button")
     public void iClickAddToFavoritesButton() {
         ProductDetailsPage.getInstance(WebDriverSingleton.getInstance()).addToFavorites();
+        MyUtil.takeScreenshots(WebDriverSingleton.getInstance());
 
     }
 
@@ -74,8 +76,7 @@ public class OzonStepDefinitions {
         //Чтобы тест падал и логировалось  MyLogger.error("Element book is NOT present");
         if (book != null) {
             MyLogger.info("Element book is present");
-        }
-        else{
+        } else {
             MyLogger.error("Element book is NOT present");
         }
         WebDriverSingleton.getInstance().navigate().refresh();//Чтобы поле поиска обновилось перед следующим параметром

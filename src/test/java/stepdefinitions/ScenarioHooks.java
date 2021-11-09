@@ -14,7 +14,7 @@ public class ScenarioHooks {
 
     @Before
     public void driverUp() {
-      WebDriverSingleton.getInstance();
+        WebDriverSingleton.getInstance();
     }
 
     @After
@@ -22,7 +22,7 @@ public class ScenarioHooks {
         try {
             WebDriverSingleton.webDriverQuit();
         } catch (WebDriverException e) {
-            MyLogger.error("This is WebDriverException found "+e.getMessage());
+            MyLogger.error("This is WebDriverException found " + e.getMessage());
             MyUtil.takeScreenshots(WebDriverSingleton.getInstance());
         }
     }
@@ -30,7 +30,7 @@ public class ScenarioHooks {
     @After
     public void tearDown(Scenario scenario) {
         if (scenario.isFailed()) {
-            MyLogger.error("This Scenario ended with status "+scenario.getStatus());
+            MyLogger.error("This Scenario ended with status " + scenario.getStatus());
             MyUtil.takeScreenshots(WebDriverSingleton.getInstance());
         }
     }

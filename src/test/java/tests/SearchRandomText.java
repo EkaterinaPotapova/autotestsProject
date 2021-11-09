@@ -15,7 +15,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class SearchRandomText {
 
     private SearchResultPage searchResultPageObject;
-    private int stringLenght = 10;
+    private final int stringLenght = 10;
 
     @Test
     public void testScenario() {
