@@ -54,7 +54,7 @@ public class WebServTest {
         ResponseBody responseBody = response.getBody();
         User[] usersMas = responseBody.as(User[].class);//в таком типе данных User[].class мы хотим получить результат
         logger.info("Length of  usersMas is " + usersMas.length);
-        Assert.assertEquals(usersMas.length, 101);
+        Assert.assertEquals(usersMas.length, 101);//тут специально ошибка
     }
 
     @AfterMethod
