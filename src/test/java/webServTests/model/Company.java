@@ -1,4 +1,4 @@
-package webServTests;
+package webServTests.model;
 
 
 import java.util.HashMap;

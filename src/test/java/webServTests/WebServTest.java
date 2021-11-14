@@ -9,6 +9,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import webServTests.model.User;
 
 public class WebServTest {
     private static final Logger logger = Logger.getLogger(WebServTest.class);
