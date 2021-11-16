@@ -19,7 +19,6 @@ public class WebServTest {
 
     @BeforeTest
     public void initTest() {
-        String host = "https://jsonplaceholder.typicode.com/users";
         RestAssured.baseURI = "https://jsonplaceholder.typicode.com";
     }
 
@@ -39,9 +38,9 @@ public class WebServTest {
         Response response = RestAssured.when()
                 .get("/users")//Send the http request by using the GET method
                 .andReturn();//получаем ответ
-              String rpContentTypeHeader = response.getHeader("Content-Type");
+        String rpContentTypeHeader = response.getHeader("Content-Type");
         logger.info("Header is " + rpContentTypeHeader);
-        Assert.assertNotNull(rpContentTypeHeader.length());
+        Assert.assertNotNull(rpContentTypeHeader);
         logger.info("Length of  rpContentTypeHeader is " + rpContentTypeHeader.length());
         Assert.assertEquals(rpContentTypeHeader, "application/json; charset=utf-8");
     }
@@ -60,9 +59,7 @@ public class WebServTest {
 
     @AfterMethod
     public static void checkTestStatus(ITestResult result) {
-        if (result.isSuccess()) {
-            return;
-        } else {
+        if (!result.isSuccess()) {
             logger.error("Error in test" + result.getMethod());
         }
     }
